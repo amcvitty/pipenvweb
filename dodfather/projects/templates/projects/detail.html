@@ -1,0 +1,17 @@
+{% extends "projects/base.html" %}
+
+{% block title %}
+    {{ project.title }}
+{% endblock title%}
+
+{% block contextbuttons %}
+<a type="button" class="btn btn-sm btn-outline-secondary">Share</a>
+<a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'projects:detail' project.id %}">Edit</a>
+{% endblock%}
+
+{% block content %}
+    <h4>Value Proposition</h4>
+    <p>{{ project.value_proposition }}</p>
+
+{% endblock content %}
+
