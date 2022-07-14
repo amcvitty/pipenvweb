@@ -22,7 +22,7 @@ class Project(models.Model):
         (COMPLETED, 'Completed'),
         (RESPECIFYING, 'Respect'),
     ]
-    title = models.CharField(max_length=5)
+    title = models.CharField(max_length=50)
     value_proposition = models.TextField(max_length=2000)
     status = models.CharField(max_length=1,
                               choices=STATUS_CHOICES,

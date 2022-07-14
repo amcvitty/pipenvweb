@@ -9,8 +9,9 @@ Hopefully avoid all that by making nice web things. Maybe even put in some jquer
 TODO:
 
 - [x] Store a project
-- [ ] Edit a project and save it
-- [ ] Search projects by title
+- [x] Edit a project and save it
+- [x] Delete a project
+- [x] Search projects by title
 - [ ] Add measures of success to a project
 - [ ] Add team members (i.e create user model)
 - [ ] Allow team members to sign off on the project when it's doodling
