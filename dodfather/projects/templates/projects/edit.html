@@ -9,11 +9,14 @@
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-
+    <table class="table">
+    {{ measures_form.as_table }}
+    </table>
     <input type="submit" value="Save changes">
 </form>
 
-<form method="post">
+<!-- TODO - should we allow deleting? Or should this always be abandoned? -->
+<form method="post" action="{% url 'projects:delete' form.instance.id %}">
     {% csrf_token %}
     <input type="hidden" name="delete_project" value="true"/>
     <button type="submit" class="btn btn-danger">Delete Project</button>

@@ -13,5 +13,25 @@
     <h4>Value Proposition</h4>
     <p>{{ project.value_proposition }}</p>
 
+
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for measure in measures %}
+          <tr>
+            <td>{{measure.title}}</td>
+            <td>{{measure.description}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+
 {% endblock content %}
 

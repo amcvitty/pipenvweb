@@ -9,7 +9,9 @@
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-
+    <table class="table">
+    {{ measures_form }}
+    </table>
     <input type="submit" value="Create">
 </form>
 {% endblock content %}

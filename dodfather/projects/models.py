@@ -1,11 +1,8 @@
 from django.db import models
-from django.forms import ModelForm
 import datetime
 from django.utils import timezone
-
-
 # class User(models.Model)
-# class Measure(models )
+
 
 class Project(models.Model):
 
@@ -42,7 +39,7 @@ class Project(models.Model):
     #     return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
 
-class ProjectForm(ModelForm):
-    class Meta:
-        model = Project
-        fields = ['title', 'value_proposition', 'status']
+class Measure(models.Model):
+    title = models.CharField(max_length=50)
+    description = models.TextField(max_length=400)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
