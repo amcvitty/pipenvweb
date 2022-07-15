@@ -13,7 +13,7 @@ from .models import Project, ProjectForm
 class IndexView(generic.ListView):
     template_name = 'projects/index.html'
     model = Project
-    paginate_by = 20
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -22,7 +22,7 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q', '')
-        return Project.objects.filter(title__icontains=query)
+        return Project.objects.filter(title__icontains=query).order_by('-created_at')
 
 
 def new(request):
