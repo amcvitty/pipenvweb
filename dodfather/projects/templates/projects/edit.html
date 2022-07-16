@@ -8,9 +8,13 @@
 
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+
     <table class="table">
-    {{ measures_form.as_table }}
+        {{ form.as_table }}
+    </table>
+
+    <table class="table">
+        {{ measures_form.as_table }}
     </table>
     <input type="submit" value="Save changes">
 </form>
