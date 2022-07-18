@@ -42,14 +42,16 @@ Portfolio managers will want to see their projects and manage them.
 # Other notes on Django
 
 Run through the scaffold for CRUD
-GET /posts - index - get all, render
-GET /posts/new - show form new.html with blank object
-POST /posts - create - validate, then save and redirect, or render new.html with errors
-GET /posts/:id - get single
-GET /posts/:id/edit - edit form with existing object
-PATCH /posts/:id - update. validate, then save and redirect, or render edit.html with ModelForm
-DELETE /posts/:id - delete
+
+- GET /posts - index - get all, render
+- GET /posts/new - show form new.html with blank object
+- POST /posts - create - validate, then save and redirect, or render new.html with errors
+- GET /posts/:id - get single
+- GET /posts/:id/edit - edit form with existing object
+- PATCH /posts/:id - update. validate, then save and redirect, or render edit.html \* with ModelForm
+- DELETE /posts/:id - delete
 
 Maybe look here: https://www.geeksforgeeks.org/django-crud-create-retrieve-update-delete-function-based-views/
 But also maybe look at a Rails scaffold new?
+
 Answer is https://docs.djangoproject.com/en/4.0/ref/class-based-views/

@@ -1,23 +1,26 @@
 from django.db import models
 import datetime
 from django.utils import timezone
-# class User(models.Model)
 
 
 class Project(models.Model):
 
     DOODLING = 'D'
-    IN_PROGRESS = 'I'
+    EXECUTNG = 'I'
+    SUBMITTED = 'S'
     ABANDONED = 'A'
     COMPLETED = 'C'
     RESPECIFYING = 'R'
+    FAILED = 'F'
 
     STATUS_CHOICES = [
         (DOODLING, 'Doodling'),
-        (IN_PROGRESS, 'In Progress'),
+        (SUBMITTED, 'Submitted'),
+        (EXECUTNG, 'Executing'),
         (ABANDONED, 'Abandoned'),
         (COMPLETED, 'Completed'),
-        (RESPECIFYING, 'Respect'),
+        (RESPECIFYING, 'Respecifying'),
+        (FAILED, 'Failed'),
     ]
     title = models.CharField(max_length=50)
     value_proposition = models.TextField(max_length=2000)
@@ -43,3 +46,6 @@ class Measure(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=400)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title

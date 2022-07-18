@@ -9,7 +9,7 @@ class MeasureInline(admin.TabularInline):
 
 
 class ProjectAdmin(admin.ModelAdmin):
-    fields = ['title', 'value_proposition']
+    fields = ['title', 'value_proposition', 'status']
     inlines = [MeasureInline, ]
 
 
